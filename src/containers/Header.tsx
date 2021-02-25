@@ -1,11 +1,6 @@
 import React from "react";
 
-/**
- * Types
- */
-interface Props {}
-
-const Header: React.FC<Props> = ({}: Props) => {
+const Header: React.FC = () => {
   return <>Header</>;
 };
 

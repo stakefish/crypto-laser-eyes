@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
-import { IPoint } from "face-api.js";
+import { values, isNil } from "ramda";
 import { Stage, Layer } from "react-konva";
+import { IPoint } from "face-api.js";
 
 import { models, detect } from "../helpers/utils";
 import { useSetState } from "../helpers/hooks";
@@ -9,7 +10,6 @@ import { Laser } from "../helpers/types";
 import { LASERS, LASER_SIZE, SCALE_FACTOR, STAGE_CONFIG } from "../helpers/const";
 
 import Figure from "../components/Figure";
-import { isNil } from "ramda";
 
 /**
  * Types
@@ -29,14 +29,21 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => 
     models();
   }, []);
 
+  useEffect(() => {
+    setState({
+      left: undefined,
+      right: undefined,
+    });
+  }, [portrait]);
+
   const onClick = async () => {
     try {
       setState(await detect());
     } catch {}
   };
 
+  const lasers = values(state);
   const src = LASERS?.get(laser)?.src;
-  const lasers = Object.values(state);
 
   return (
     <>
