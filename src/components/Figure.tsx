@@ -14,14 +14,15 @@ interface Props extends FigureConfig {
   offsetY?: number;
   src?: string;
   scaled?: boolean;
+  draggable?: boolean;
 }
 
-const Figure: React.FC<Props> = ({ src, scaled, ...rest }: Props) => {
+const Figure: React.FC<Props> = ({ src, scaled, draggable, ...rest }: Props) => {
   const meta = useImage(src as string);
   const image = head(meta) as HTMLImageElement;
   const config = scaled ? scale(image) : rest;
 
-  return <Image image={image} {...config} />;
+  return <Image image={image} draggable={draggable} {...config} />;
 };
 
 export default Figure;

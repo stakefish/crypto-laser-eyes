@@ -1,14 +1,13 @@
 import { Laser, LaserMeta } from "./types";
 
-export const LASERS = new Map<Laser, LaserMeta>([
-  [Laser.Red, { src: "red-src", name: "red-name" }],
-  [Laser.Blue, { src: "blue-src", name: "blue-name" }],
-  [Laser.Green, { src: "green-src", name: "green-name" }],
-]);
+import yellow from "../static/light-hit-1.png";
+
+export const LASERS = new Map<Laser, LaserMeta>([[Laser.Yellow, { src: yellow, name: "yellow" }]]);
 
 export const STAGE_CONFIG = {
   width: 670,
   height: 630,
 };
 
+export const LASER_SIZE = 150;
 export const SCALE_FACTOR = 2;
