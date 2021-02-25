@@ -1,4 +1,6 @@
 import { isNil } from "ramda";
+import { IPoint, nets, Point } from "face-api.js";
+import { detectSingleFace, TinyFaceDetectorOptions } from "face-api.js";
 
 import { SCALE_FACTOR, STAGE_CONFIG } from "./const";
 
@@ -21,5 +23,48 @@ export const scale = (image?: HTMLImageElement): FigureConfig | null => {
     y,
     width,
     height,
+  };
+};
+
+export const models = async () => {
+  try {
+    await Promise.all([
+      nets.tinyFaceDetector.loadFromUri("/models"),
+      nets.faceLandmark68Net.loadFromUri("/models"),
+    ]);
+  } catch (error) {
+    console.error(error);
+  }
+};
+
+export const average = (points: Point[] | undefined): IPoint | undefined => {
+  if (isNil(points)) {
+    return undefined;
+  }
+
+  const { x, y } = points.reduce(
+    (total, point) => ({
+      x: total.x + point.x,
+      y: total.y + point.y,
+    }),
+    { x: 0, y: 0 }
+  );
+
+  return {
+    x: x / points.length,
+    y: y / points.length,
+  };
+};
+
+export const detect = async () => {
+  const face = document.querySelector("canvas") as HTMLCanvasElement;
+  const detector = await detectSingleFace(face, new TinyFaceDetectorOptions()).withFaceLandmarks();
+
+  const left = average(detector?.landmarks.getLeftEye());
+  const right = average(detector?.landmarks.getRightEye());
+
+  return {
+    left,
+    right,
   };
 };
