@@ -9,8 +9,8 @@ export const LASERS = new Map<Laser, LaserMeta>([
 ]);
 
 export const STAGE_CONFIG = {
-  width: 670,
-  height: 630,
+  width: 540,
+  height: 415,
 };
 
 export const LASER_SIZE = 150;
