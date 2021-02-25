@@ -1,5 +1,5 @@
 import React from "react";
-import { ThemeProvider } from "styled-components";
+import { ThemeProvider, Theme } from "styled-components";
 
 /**
  * Types
@@ -11,9 +11,9 @@ interface Props {
 /**
  * Theme
  */
-const theme = {
+const theme: Theme = {
   font: {},
-  palette: {},
+  colors: {},
   spacing: {},
 };
 
