@@ -54,10 +54,10 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => 
                 draggable
                 src={src}
                 key={laser?.x}
-                width={LASER_SIZE}
-                height={LASER_SIZE}
                 x={laser?.x}
                 y={laser?.y}
+                width={LASER_SIZE}
+                height={LASER_SIZE}
               />
             );
           })}
