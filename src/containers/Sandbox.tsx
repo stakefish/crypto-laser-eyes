@@ -29,13 +29,6 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => 
     models();
   }, []);
 
-  useEffect(() => {
-    setState({
-      left: undefined,
-      right: undefined,
-    });
-  }, [portrait]);
-
   const onClick = async () => {
     try {
       setState(await detect());
@@ -58,11 +51,8 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => 
             }
             return (
               <Figure
-                draggable
                 src={src}
                 key={laser?.x}
-                width={LASER_SIZE}
-                height={LASER_SIZE}
                 x={laser?.x - LASER_SIZE / SCALE_FACTOR}
                 y={laser?.y - LASER_SIZE / SCALE_FACTOR}
               />
