@@ -1,11 +1,6 @@
 import React from "react";
 
-/**
- * Types
- */
-interface Props {}
-
-const Footer: React.FC<Props> = ({}: Props) => {
+const Footer: React.FC = () => {
   return <>Footer</>;
 };
 

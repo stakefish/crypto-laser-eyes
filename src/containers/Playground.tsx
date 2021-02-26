@@ -11,8 +11,8 @@ import Sandbox from "./Sandbox";
  * Types
  */
 interface Props {
-  portrait?: string;
   laser?: Laser;
+  portrait?: string;
   onDrop: (files: File[]) => void;
 }
 

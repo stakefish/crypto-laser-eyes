@@ -1,7 +1,6 @@
 export enum Laser {
   Red,
-  Blue,
-  Green,
+  Yellow,
 }
 
 export interface LaserMeta {

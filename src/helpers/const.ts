@@ -1,9 +1,11 @@
 import { Laser, LaserMeta } from "./types";
 
+import red from "../static/light-hit-2.png";
+import yellow from "../static/light-hit-1.png";
+
 export const LASERS = new Map<Laser, LaserMeta>([
-  [Laser.Red, { src: "red-src", name: "red-name" }],
-  [Laser.Blue, { src: "blue-src", name: "blue-name" }],
-  [Laser.Green, { src: "green-src", name: "green-name" }],
+  [Laser.Red, { src: red, name: "red" }],
+  [Laser.Yellow, { src: yellow, name: "yellow" }],
 ]);
 
 export const STAGE_CONFIG = {
@@ -11,4 +13,5 @@ export const STAGE_CONFIG = {
   height: 630,
 };
 
+export const LASER_SIZE = 150;
 export const SCALE_FACTOR = 2;

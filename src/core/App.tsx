@@ -20,7 +20,7 @@ interface State {
 
 const App: React.FC = () => {
   const [state, setState] = useSetState<State>({
-    laser: undefined,
+    laser: Laser.Yellow,
     portrait: undefined,
   });
 
