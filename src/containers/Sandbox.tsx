@@ -7,7 +7,7 @@ import { models, detect } from "../helpers/utils";
 import { useSetState } from "../helpers/hooks";
 
 import { Laser } from "../helpers/types";
-import { LASERS, LASER_SIZE, SCALE_FACTOR, STAGE_CONFIG } from "../helpers/const";
+import { LASERS, LASER_SIZE, STAGE_CONFIG } from "../helpers/const";
 
 import Figure from "../components/Figure";
 
@@ -51,10 +51,13 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => 
             }
             return (
               <Figure
+                draggable
                 src={src}
                 key={laser?.x}
-                x={laser?.x - LASER_SIZE / SCALE_FACTOR}
-                y={laser?.y - LASER_SIZE / SCALE_FACTOR}
+                width={LASER_SIZE}
+                height={LASER_SIZE}
+                x={laser?.x}
+                y={laser?.y}
               />
             );
           })}

@@ -2,7 +2,7 @@ import { isNil } from "ramda";
 import { IPoint, nets, Point } from "face-api.js";
 import { detectSingleFace, TinyFaceDetectorOptions } from "face-api.js";
 
-import { SCALE_FACTOR, STAGE_CONFIG } from "./const";
+import { LASER_SIZE, SCALE_FACTOR, STAGE_CONFIG } from "./const";
 
 import { FigureConfig } from "./types";
 
@@ -37,6 +37,10 @@ export const models = async () => {
   }
 };
 
+export const coordinate = (position: number): number => {
+  return (position - LASER_SIZE) / SCALE_FACTOR;
+};
+
 export const average = (points: Point[] | undefined): IPoint | undefined => {
   if (isNil(points)) {
     return undefined;
@@ -51,8 +55,8 @@ export const average = (points: Point[] | undefined): IPoint | undefined => {
   );
 
   return {
-    x: x / points.length,
-    y: y / points.length,
+    x: coordinate(x / points.length),
+    y: coordinate(y / points.length),
   };
 };
 
