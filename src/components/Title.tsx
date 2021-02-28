@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { rem } from "polished";
+import styled from "styled-components"
+import { rem } from "polished"
 
 /**
  * Types
@@ -16,6 +16,10 @@ const Title = styled.h1<TitleProps>`
   font-size: ${(props) => rem(props.theme.fontSize.h1)};
   font-family: ${(props) => props.theme.font.headings};
   font-weight: ${(props) => props.theme.fontWeight.extrabold};
-`;
 
-export default Title;
+  @media all and (max-width: 767px) {
+    font-size: ${(props) => rem(props.theme.fontSize.h2)};
+  }
+`
+
+export default Title

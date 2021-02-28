@@ -6,15 +6,15 @@ export const theme = {
       outerMargin: 2, // rem
       mediaQuery: "only screen",
       container: {
-        sm: 46, // rem
-        md: 61, // rem
+        sm: 48, // rem
+        md: 64, // rem
         lg: 80.3, // rem
       },
       breakpoints: {
         xs: 0, // em
         sm: 48, // em
         md: 64, // em
-        lg: 75, // em
+        lg: 80.3, // em
       },
     },
     font: {

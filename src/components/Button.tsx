@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { rem } from "polished";
+import styled from "styled-components"
+import { rem } from "polished"
 
 /**
  * Types
@@ -24,6 +24,18 @@ const Button = styled.button<ButtonProps>`
   &:hover {
     background-color: ${(props) => props.theme.colors.primary};
   }
-`;
 
-export default Button;
+  i {
+    font-size: ${rem(48)};
+    margin: ${rem(-7)} ${rem(15)} ${rem(-7)} ${rem(-15)};
+  }
+
+  i,
+  span {
+    display: inline-block;
+    vertical-align: middle;
+    line-height: 1;
+  }
+`
+
+export default Button

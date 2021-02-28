@@ -24,6 +24,32 @@ export const GlobalStyles = createGlobalStyle`
     font-display:swap;
   }
 
+  @font-face {
+    font-family: "icons";
+    src:  url("fonts/icons.eot?xwvsp0");
+    src:  url("fonts/icons.eot?xwvsp0#iefix") format("embedded-opentype"),
+      url("fonts/icons.ttf?xwvsp0") format("truetype"),
+      url("fonts/icons.woff?xwvsp0") format("woff"),
+      url("fonts/icons.svg?xwvsp0#icons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block;
+  }
+
+  html {
+    @media all and (max-width: 767px) {
+      font-size: 14px
+    }
+
+    @media all and (max-width: 580px) {
+      font-size: 12px
+    }
+
+    @media all and (max-width: 430) {
+      font-size: 10px
+    }
+  }
+
   body {
     position: relative;
     min-height: 100vh;

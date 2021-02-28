@@ -1,28 +1,32 @@
-import React from "react";
-import { useDropzone } from "react-dropzone";
-import styled from "styled-components";
-import { rem } from "polished";
+import React from "react"
+import { useDropzone } from "react-dropzone"
+import styled from "styled-components"
 
-import Text from "../components/Text";
-import Button from "../components/Button";
-import Title from "../components/Title";
+import SvgIcon from "../components/SvgIcon"
+import Text from "../components/Text"
+import Button from "../components/Button"
+import Title from "../components/Title"
 
 /**
  * Types
  */
 interface Props {
-  onDrop: (files: File[]) => void;
+  onDrop: (files: File[]) => void
 }
 interface WrapperProps {}
 
-const Wrapper = styled.header<WrapperProps>`
+const Wrapper = styled.div<WrapperProps>`
   text-align: center;
-`;
+
+  @media all and (max-width: 991px) {
+    margin-bottom: 30px;
+  }
+`
 
 const Info: React.FC<Props> = ({ onDrop }: Props) => {
   const { getRootProps, getInputProps } = useDropzone({
     onDrop,
-  });
+  })
 
   return (
     <Wrapper>
@@ -33,11 +37,12 @@ const Info: React.FC<Props> = ({ onDrop }: Props) => {
       </Text>
 
       <Button {...getRootProps()}>
-        Upload Photo
+        <SvgIcon iconKey="instagram" />
+        <span>Upload Photo</span>
         <input {...getInputProps()} accept="image/*" />
       </Button>
     </Wrapper>
-  );
-};
+  )
+}
 
-export default Info;
+export default Info
