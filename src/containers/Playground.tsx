@@ -1,8 +1,10 @@
 import React from "react";
+import { Grid, Col, Row } from "react-styled-flexboxgrid";
 
 import { Laser } from "../helpers/types";
 
-import Grid from "../components/Grid";
+import Section from "../components/Section";
+import Card from "../components/Card";
 
 import Info from "./Info";
 import Sandbox from "./Sandbox";
@@ -18,10 +20,20 @@ interface Props {
 
 const Playground: React.FC<Props> = ({ laser, portrait, onDrop }: Props) => {
   return (
-    <Grid columns="1fr 1fr">
-      <Info onDrop={onDrop} />
-      <Sandbox laser={laser} portrait={portrait} />
-    </Grid>
+    <Section>
+      <Grid>
+        <Card>
+          <Row middle="sm">
+            <Col xs={12} md={6}>
+              <Info onDrop={onDrop} />
+            </Col>
+            <Col xs={12} md={6}>
+              <Sandbox laser={laser} portrait={portrait} />
+            </Col>
+          </Row>
+        </Card>
+      </Grid>
+    </Section>
   );
 };
 
