@@ -1,5 +1,5 @@
 import React from "react"
-import styled, { css } from "styled-components"
+import styled from "styled-components"
 import { rem } from "polished"
 
 /**
@@ -7,6 +7,25 @@ import { rem } from "polished"
  */
 export interface SvgIconProps {
   iconKey: string
+}
+
+const renderIconKey = (iconKey: string) => {
+  switch (iconKey) {
+    case "twitter":
+      return "\\e900"
+    case "telegram":
+      return "\\e901"
+    case "instagram":
+      return "\\e905"
+    case "download":
+      return "\\e904"
+    case "photo":
+      return "\\e902"
+    case "share":
+      return "\\e903"
+    default:
+      return ""
+  }
 }
 
 const Icon = styled.i<SvgIconProps>`
@@ -22,29 +41,9 @@ const Icon = styled.i<SvgIconProps>`
   display: inline-block;
   font-size: ${rem(24)};
 
-  ${(props) =>
-    props.iconKey === "twitter" &&
-    css`
-      &:before {
-        content: "\\e900";
-      }
-    `}
-
-  ${(props) =>
-    props.iconKey === "telegram" &&
-    css`
-      &:before {
-        content: "\\e901";
-      }
-    `}
-
-  ${(props) =>
-    props.iconKey === "instagram" &&
-    css`
-      &:before {
-        content: "\\e902";
-      }
-    `}
+  &:before {
+    content: ${(props) => `"${renderIconKey(props.iconKey)}"`};
+  }
 `
 
 const SvgIcon: React.FC<SvgIconProps> = ({ iconKey, ...props }: SvgIconProps) => {

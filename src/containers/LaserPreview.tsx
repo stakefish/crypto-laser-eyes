@@ -1,17 +1,17 @@
-import React from "react";
+import React from "react"
 
-import { Laser } from "../helpers/types";
+import { Laser } from "../helpers/types"
 
-import Variant from "../components/Variant";
+import Variant from "../components/Variant"
 
 /**
  * Types
  */
 interface Props {
-  onClick: (laser: Laser) => void;
-  title: string;
-  image: string;
-  active?: boolean;
+  onClick: (laser: Laser) => void
+  title: string
+  image: string
+  active?: boolean
 }
 
 const LaserPreview: React.FC<Props> = ({ onClick, title, image }) => {
@@ -22,9 +22,11 @@ const LaserPreview: React.FC<Props> = ({ onClick, title, image }) => {
       image={image}
       // TODO: active
     >
-      <span>{title}</span>
+      <div>
+        <span>{title}</span>
+      </div>
     </Variant>
-  );
-};
+  )
+}
 
-export default LaserPreview;
+export default LaserPreview
