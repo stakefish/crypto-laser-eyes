@@ -36,6 +36,7 @@ const Control = styled.div`
   transition: color ${(props) => props.theme.transition.base};
   cursor: pointer;
 
+  &:active,
   &:hover {
     color: ${(props) => props.theme.colors.white};
 

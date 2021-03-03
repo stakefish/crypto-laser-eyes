@@ -36,6 +36,10 @@ const Logo = styled.div`
   span {
     font-weight: ${(props) => props.theme.fontWeight.base};
   }
+
+  @media all and (max-width: 614px) {
+    margin-bottom: ${rem(10)};
+  }
 `
 
 const Social = styled.div`
@@ -64,7 +68,7 @@ const Header: React.FC<Props> = () => {
   return (
     <Wrapper>
       <Grid>
-        <Row middle="xs" between="xs">
+        <Row middle="xs" center="xs" between="sm">
           <Col>
             <Logo>
               <img src="images/logo.svg" alt="" />

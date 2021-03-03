@@ -1,19 +1,19 @@
-import React from "react";
-import { Grid, Row, Col } from "react-styled-flexboxgrid";
+import React from "react"
+import { Grid, Row, Col } from "react-styled-flexboxgrid"
 
-import { Laser } from "../helpers/types";
-import { LASERS } from "../helpers/const";
+import { Laser } from "../helpers/types"
+import { LASERS } from "../helpers/const"
 
-import LaserPreview from "./LaserPreview";
+import LaserPreview from "./LaserPreview"
 
-import Card from "../components/Card";
-import Section from "../components/Section";
+import Card from "../components/Card"
+import Section from "../components/Section"
 
 /**
  * Types
  */
 interface Props {
-  onClick: (laser: Laser) => void;
+  onClick: (laser: Laser) => void
 }
 
 const Lasers: React.FC<Props> = ({ onClick }) => {
@@ -23,9 +23,8 @@ const Lasers: React.FC<Props> = ({ onClick }) => {
         <Card>
           <Row>
             {Array.from(LASERS).map(([laser, meta]) => (
-              <Col>
+              <Col key={meta.name}>
                 <LaserPreview
-                  key={meta.name}
                   onClick={() => onClick(laser)}
                   title={meta.name}
                   image={meta.src}
@@ -37,7 +36,7 @@ const Lasers: React.FC<Props> = ({ onClick }) => {
         </Card>
       </Grid>
     </Section>
-  );
-};
+  )
+}
 
-export default Lasers;
+export default Lasers

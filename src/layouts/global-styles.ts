@@ -37,7 +37,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 
   html {
-    @media all and (max-width: 767px) {
+    @media all and (max-width: 1040px) {
       font-size: 14px
     }
 
@@ -66,6 +66,7 @@ export const GlobalStyles = createGlobalStyle`
     overscroll-behavior: none;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
+
   }
 
   h1, h2, h3, h4, h5 {

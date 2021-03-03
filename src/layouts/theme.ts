@@ -6,7 +6,7 @@ export const theme = {
       outerMargin: 2, // rem
       mediaQuery: "only screen",
       container: {
-        sm: 48, // rem
+        sm: 0, // rem
         md: 64, // rem
         lg: 80.3, // rem
       },

@@ -35,7 +35,8 @@ const Wrapper = styled.div<WrapperProps>`
   background-position: center;
   display: inline-block;
   overflow: hidden;
-  max-width: 100%;
+  width: 100%;
+  height: 100%;
 
   &:before {
     content: "";
@@ -46,6 +47,15 @@ const Wrapper = styled.div<WrapperProps>`
     width: 100%;
     height: 100%;
     backdrop-filter: ${(props) => (props.cleanBackground ? "none" : "blur(10px)")};
+  }
+
+  @media all and (min-width: 1025px) {
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
   }
 `
 
