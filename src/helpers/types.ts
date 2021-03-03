@@ -6,6 +6,7 @@ export enum Laser {
   Rose,
   Jade,
   Emerald,
+  Violet,
 }
 
 export interface LaserMeta {

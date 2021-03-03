@@ -7,6 +7,7 @@ import ruby from "../static/light-hit-04.png"
 import rose from "../static/light-hit-05.png"
 import jade from "../static/light-hit-06.png"
 import emerald from "../static/light-hit-07.png"
+import violet from "../static/light-hit-08.png"
 
 export const LASERS = new Map<Laser, LaserMeta>([
   [Laser.Gold, { src: gold, name: "gold" }],
@@ -16,6 +17,7 @@ export const LASERS = new Map<Laser, LaserMeta>([
   [Laser.Rose, { src: rose, name: "rose" }],
   [Laser.Jade, { src: jade, name: "jade" }],
   [Laser.Emerald, { src: emerald, name: "emerald" }],
+  [Laser.Violet, { src: violet, name: "violet" }],
 ])
 
 export const STAGE_CONFIG = {

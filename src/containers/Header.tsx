@@ -72,7 +72,7 @@ const Header: React.FC<Props> = () => {
           <Col>
             <Logo>
               <img src="images/logo.svg" alt="" />
-              crypto<span>lazereyes</span>
+              crypto<span>lasereyes</span>
             </Logo>
           </Col>
           <Col>
