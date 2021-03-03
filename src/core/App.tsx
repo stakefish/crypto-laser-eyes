@@ -24,7 +24,7 @@ const App: React.FC = () => {
     portrait: undefined,
   })
 
-  const onLaser = (laser: Laser): void => {
+  const onClick = (laser: Laser): void => {
     setState({
       laser,
     })
@@ -41,7 +41,7 @@ const App: React.FC = () => {
       <Main>
         <Header />
         <Playground laser={state.laser} portrait={state.portrait} onDrop={onDrop} />
-        <Lasers onClick={onLaser} />
+        <Lasers onClick={onClick} />
       </Main>
     </Layout>
   )
