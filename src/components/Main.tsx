@@ -14,6 +14,11 @@ const Main = styled.main<MainProps>`
     flex-direction: column;
     height: 100vh;
   }
+
+  @media all and (max-height: 950px) {
+    min-height: 100vh;
+    height: auto;
+  }
 `
 
 export default Main
