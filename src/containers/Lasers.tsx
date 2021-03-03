@@ -4,7 +4,7 @@ import { Grid, Row, Col } from "react-styled-flexboxgrid"
 import { Laser } from "../helpers/types"
 import { LASERS } from "../helpers/const"
 
-import LaserPreview from "./LaserPreview"
+import Variant from "../components/Variant"
 
 import Card from "../components/Card"
 import Section from "../components/Section"
@@ -16,7 +16,7 @@ interface Props {
   onClick: (laser: Laser) => void
 }
 
-const Lasers: React.FC<Props> = ({ onClick }) => {
+const Lasers: React.FC<Props> = ({ onClick }: Props) => {
   return (
     <Section>
       <Grid>
@@ -24,12 +24,7 @@ const Lasers: React.FC<Props> = ({ onClick }) => {
           <Row>
             {Array.from(LASERS).map(([laser, meta]) => (
               <Col key={meta.name}>
-                <LaserPreview
-                  onClick={() => onClick(laser)}
-                  title={meta.name}
-                  image={meta.src}
-                  // TODO: add active prop
-                />
+                <Variant title={meta.name} image={meta.src} onClick={() => onClick(laser)} />
               </Col>
             ))}
           </Row>

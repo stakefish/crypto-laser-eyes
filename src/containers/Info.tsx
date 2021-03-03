@@ -31,6 +31,7 @@ const Info: React.FC<Props> = ({ onDrop }: Props) => {
   return (
     <Wrapper>
       <Title>Laser Yourself</Title>
+
       <Text>
         Are you a true brrrrliever? <br />
         Choose your laser eyes and tell the world!
@@ -38,7 +39,7 @@ const Info: React.FC<Props> = ({ onDrop }: Props) => {
 
       <Button {...getRootProps()}>
         <SvgIcon iconKey="photo" />
-        <span>Upload Photo</span>
+        <span>Pick Photo</span>
         <input {...getInputProps()} accept="image/*" />
       </Button>
     </Wrapper>

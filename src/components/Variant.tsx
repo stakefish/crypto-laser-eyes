@@ -7,10 +7,10 @@ import { rem } from "polished"
 export interface VariantProps {
   image?: string
   active?: string
-  onClick?: any
+  onClick?: () => void
 }
 
-const Variant = styled.div<VariantProps>`
+const Laser = styled.div<VariantProps>`
   background: ${(props) => props.theme.colors.black} url(${(props) => props.image}) center / cover;
   padding: ${rem(20)};
   border-radius: ${rem(32)};
@@ -56,4 +56,4 @@ const Variant = styled.div<VariantProps>`
     `}
 `
 
-export default Variant
+export default Laser
