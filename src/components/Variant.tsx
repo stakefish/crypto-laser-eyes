@@ -12,7 +12,6 @@ export interface VariantProps {
 const Variant = styled.div<VariantProps>`
   background: ${(props) => props.theme.colors.black} url(${(props) => props.image}) center / cover;
   padding: ${rem(20)};
-  margin-bottom: ${rem(40)};
   border-radius: ${rem(32)};
   width: ${rem(138)};
   height: ${rem(138)};
