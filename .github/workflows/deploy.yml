@@ -44,4 +44,4 @@ jobs:
       - name: Contributors 👥
         uses: akhilmhdh/contributors-readme-action@v2.1.1
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
