@@ -21,7 +21,7 @@ const LaserPreview: React.FC<Props> = ({ onClick, title, image }) => {
       onClick={() => onClick}
       image={image}
       // TODO: active
-    ></Variant>
+    />
   )
 }
 
