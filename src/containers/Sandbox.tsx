@@ -12,6 +12,8 @@ import { Laser } from "../helpers/types"
 import { LASERS, LASER_SIZE, STAGE_CONFIG } from "../helpers/const"
 
 import Figure from "../components/Figure"
+import Button from "../components/Button"
+import SvgIcon from "../components/SvgIcon"
 
 /**
  * Types
@@ -50,11 +52,70 @@ const Wrapper = styled.div<WrapperProps>`
   }
 
   @media all and (min-width: 1025px) {
-    > div {
+    .stage {
       display: flex;
       align-items: center;
       justify-content: center;
       height: 100%;
+    }
+  }
+`
+
+const Actions = styled.div`
+  position: absolute;
+  right: ${rem(28)};
+  left: ${rem(28)};
+  bottom: ${rem(28)};
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ${Button} {
+    background-color: ${(props) => props.theme.colors.white};
+    padding: ${rem(10)} ${rem(18)};
+    font-size: ${rem(16)};
+    height: ${rem(44)};
+
+    &:active {
+      background-color: ${(props) => props.theme.colors.dark};
+      color: ${(props) => props.theme.colors.white};
+    }
+  }
+`
+
+const ButtonGroup = styled.div`
+  ${Button} {
+    padding: ${rem(10)} ${rem(12)};
+
+    &:first-child {
+      border-radius: ${rem(16)} 0 0 ${rem(16)};
+    }
+
+    &:last-child {
+      border-radius: 0 ${rem(16)} ${rem(16)} 0;
+      border-left: 1px solid ${(props) => props.theme.colors.dark};
+    }
+
+    &:hover {
+      span {
+        max-width: 300px;
+        opacity: 1;
+        margin-left: ${rem(10)};
+      }
+    }
+
+    i {
+      font-size: ${rem(24)};
+      margin-right: 0;
+      margin-left: 0;
+      transition: color ${(props) => props.theme.transition.base};
+    }
+
+    span {
+      max-width: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all ${(props) => props.theme.transition.base} 0.1s;
     }
   }
 `
@@ -81,7 +142,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => 
   return (
     <>
       <Wrapper preview={portrait || "images/blank.png"} cleanBackground={!portrait}>
-        <Stage {...STAGE_CONFIG}>
+        <Stage className="stage" {...STAGE_CONFIG}>
           <Layer>
             {portrait ? <Figure scaled src={portrait} /> : null}
 
@@ -103,8 +164,23 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => 
             })}
           </Layer>
         </Stage>
+
+        <Actions>
+          <Button type="button" onClick={onClick}>
+            Detect
+          </Button>
+          <ButtonGroup>
+            <Button type="button">
+              <SvgIcon iconKey="share" />
+              <span>Share</span>
+            </Button>
+            <Button type="button">
+              <SvgIcon iconKey="download" />
+              <span>Download</span>
+            </Button>
+          </ButtonGroup>
+        </Actions>
       </Wrapper>
-      <button onClick={onClick}>detect</button>
     </>
   )
 }
