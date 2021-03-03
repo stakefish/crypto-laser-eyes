@@ -8,6 +8,7 @@ import { Layout } from "../layouts/"
 import Header from "../containers/Header"
 import Lasers from "../containers/Lasers"
 import Playground from "../containers/Playground"
+import Main from "../components/Main"
 
 /**
  * Types
@@ -37,9 +38,11 @@ const App: React.FC = () => {
 
   return (
     <Layout>
-      <Header />
-      <Playground laser={state.laser} portrait={state.portrait} onDrop={onDrop} />
-      <Lasers onClick={onLaser} />
+      <Main>
+        <Header />
+        <Playground laser={state.laser} portrait={state.portrait} onDrop={onDrop} />
+        <Lasers onClick={onLaser} />
+      </Main>
     </Layout>
   )
 }
