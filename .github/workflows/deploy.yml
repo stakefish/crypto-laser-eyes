@@ -1,0 +1,42 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.4
+        with:
+          persist-credentials: false
+
+      - name: Cache 🥁
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+      - name: Install 🏗
+        run: npm install
+
+      - name: Build 📦
+        env:
+          NODE_ENV: production
+        run: npm run build
+
+      - name: Deploy to GitHub Pages 🚀
+        if: success()
+        uses: crazy-max/ghaction-github-pages@v2
+        with:
+          target_branch: gh-pages
+          build_dir: build
+          fqdn: cryptolazereyes.com
+        env:
+          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
