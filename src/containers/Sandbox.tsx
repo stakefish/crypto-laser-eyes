@@ -51,13 +51,11 @@ const Wrapper = styled.div<WrapperProps>`
     backdrop-filter: ${(props) => (props.cleanBackground ? "none" : "blur(10px)")};
   }
 
-  @media all and (min-width: 1025px) {
-    .stage {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      height: 100%;
-    }
+  .stage {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
   }
 `
 
@@ -114,6 +112,7 @@ const ButtonGroup = styled.div`
     span {
       max-width: 0;
       opacity: 0;
+      display: inline-block;
       overflow: hidden;
       transition: all ${(props) => props.theme.transition.base} 0.1s;
     }
@@ -165,21 +164,23 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
           </Layer>
         </Stage>
 
-        <Actions>
-          <Button type="button" onClick={onClick}>
-            Detect
-          </Button>
-          <ButtonGroup>
-            <Button type="button">
-              <SvgIcon iconKey="share" />
-              <span>Share</span>
+        {portrait && (
+          <Actions>
+            <Button type="button" onClick={onClick}>
+              Detect
             </Button>
-            <Button type="button">
-              <SvgIcon iconKey="download" />
-              <span>Download</span>
-            </Button>
-          </ButtonGroup>
-        </Actions>
+            <ButtonGroup>
+              <Button type="button">
+                <SvgIcon iconKey="share" />
+                <span>Share</span>
+              </Button>
+              <Button type="button">
+                <SvgIcon iconKey="download" />
+                <span>Download</span>
+              </Button>
+            </ButtonGroup>
+          </Actions>
+        )}
       </Wrapper>
     </>
   )

@@ -30,8 +30,10 @@ const Info: React.FC<Props> = ({ onDrop }: Props) => {
 
   return (
     <Wrapper>
-      <Title>Laser Yourself</Title>
-
+      <Title>
+        Laser <br />
+        Yourself
+      </Title>
       <Text>
         Are you a true brrrrliever? <br />
         Choose your laser eyes and tell the world!
