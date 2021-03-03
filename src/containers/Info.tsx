@@ -37,7 +37,7 @@ const Info: React.FC<Props> = ({ onDrop }: Props) => {
       </Text>
 
       <Button {...getRootProps()}>
-        <SvgIcon iconKey="instagram" />
+        <SvgIcon iconKey="photo" />
         <span>Upload Photo</span>
         <input {...getInputProps()} accept="image/*" />
       </Button>

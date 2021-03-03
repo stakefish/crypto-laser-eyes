@@ -22,19 +22,31 @@ interface Props {
 }
 
 interface WrapperProps {
-  preview?: boolean
+  preview?: string
+  cleanBackground?: boolean
 }
 
 const Wrapper = styled.div<WrapperProps>`
   position: relative;
   border-radius: ${rem(16)};
   background-color: ${(props) => props.theme.colors.black};
-  background-image: url(${(props) => (props.preview ? "images/blank.png" : "none")});
+  background-image: url(${(props) => props.preview});
   background-size: cover;
   background-position: center;
   display: inline-block;
   overflow: hidden;
   max-width: 100%;
+
+  &:before {
+    content: "";
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: ${(props) => (props.cleanBackground ? "none" : "blur(10px)")};
+  }
 `
 
 const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => {
@@ -58,7 +70,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => 
 
   return (
     <>
-      <Wrapper preview={!portrait}>
+      <Wrapper preview={portrait || "images/blank.png"} cleanBackground={!portrait}>
         <Stage {...STAGE_CONFIG}>
           <Layer>
             {portrait ? <Figure scaled src={portrait} /> : null}
