@@ -31,6 +31,11 @@ jobs:
           NODE_ENV: production
         run: npm run build
 
+      - name: Contributors 👥
+        uses: akhilmhdh/contributors-readme-action@v2.1.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
       - name: Deploy to GitHub Pages 🚀
         if: success()
         uses: crazy-max/ghaction-github-pages@v2
