@@ -120,7 +120,7 @@ const ButtonGroup = styled.div`
   }
 `
 
-const Sandbox: React.FC<Props> = ({ laser = Laser.Yellow, portrait }: Props) => {
+const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
   const [state, setState] = useSetState<{ [key: string]: IPoint | undefined }>({
     left: undefined,
     right: undefined,

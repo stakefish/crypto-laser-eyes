@@ -7,6 +7,7 @@ import { rem } from "polished"
 export interface VariantProps {
   image?: string
   active?: string
+  onClick?: any
 }
 
 const Variant = styled.div<VariantProps>`
