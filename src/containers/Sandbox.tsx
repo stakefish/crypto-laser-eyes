@@ -1,11 +1,11 @@
-import React, { useEffect } from "react"
+import React, { useRef, useEffect } from "react"
 import { values, isNil } from "ramda"
 import { Stage, Layer } from "react-konva"
+import { rem } from "polished"
 import { IPoint } from "face-api.js"
 import styled from "styled-components"
-import { rem } from "polished"
 
-import { models, detect } from "../helpers/utils"
+import { models, detect, download } from "../helpers/utils"
 import { useSetState } from "../helpers/hooks"
 
 import { Laser } from "../helpers/types"
@@ -155,6 +155,10 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
     right: undefined,
   })
 
+  const stageRef = useRef(null)
+  const lasers = values(state)
+  const src = LASERS?.get(laser)?.src
+
   useEffect(() => {
     models()
   }, [])
@@ -165,13 +169,17 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
     } catch {}
   }
 
-  const lasers = values(state)
-  const src = LASERS?.get(laser)?.src
+  const onExport = () => {
+    if (stageRef?.current) {
+      // @ts-expect-error
+      download(stageRef.current.toDataURL(), "crypto-laser-eyes.png")
+    }
+  }
 
   return (
     <>
-      <Wrapper preview={portrait || "images/blank.png"} cleanBackground={!portrait}>
-        <Stage className="stage" {...STAGE_CONFIG}>
+      <Wrapper preview={portrait || "images/blank.png"} cleanBackground={isNil(portrait)}>
+        <Stage className="stage" {...STAGE_CONFIG} ref={stageRef}>
           <Layer>
             {portrait ? <Figure scaled src={portrait} /> : null}
 
@@ -204,7 +212,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
                 <SvgIcon iconKey="share" />
                 <span>Share</span>
               </Button>
-              <Button type="button">
+              <Button type="button" onClick={onExport}>
                 <SvgIcon iconKey="download" />
                 <span>Download</span>
               </Button>

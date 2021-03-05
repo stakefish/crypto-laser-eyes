@@ -69,3 +69,13 @@ export const detect = async () => {
     right,
   }
 }
+
+export const download = (uri: string, name: string): void => {
+  const link = document.createElement("a")
+
+  link.download = name
+  link.href = uri
+  document.body.appendChild(link)
+  link.click()
+  document.body.removeChild(link)
+}

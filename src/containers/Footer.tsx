@@ -6,13 +6,7 @@ import { rem } from "polished"
 
 import Social from "./Social"
 
-/**
- * Types
- */
-interface Props {}
-interface WrapperProps {}
-
-const Wrapper = styled.footer<WrapperProps>`
+const Wrapper = styled.footer`
   padding: ${rem(12)} 0;
   position: absolute;
   bottom: 0;
@@ -28,7 +22,7 @@ const Wrapper = styled.footer<WrapperProps>`
   }
 `
 
-const Footer: React.FC<Props> = ({}: Props) => {
+const Footer: React.FC = () => {
   return (
     <Wrapper>
       {isMobile && (
