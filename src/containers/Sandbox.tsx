@@ -57,6 +57,13 @@ const Wrapper = styled.div<WrapperProps>`
     justify-content: center;
     height: 100%;
   }
+
+  @media all and (max-width: 580px) {
+    .konvajs-content {
+      width: 280px !important;
+      height: 280px !important;
+    }
+  }
 `
 
 const Actions = styled.div`
@@ -77,6 +84,24 @@ const Actions = styled.div`
     &:active {
       background-color: ${(props) => props.theme.colors.dark};
       color: ${(props) => props.theme.colors.white};
+    }
+  }
+
+  @media all and (max-width: 580px) {
+    left: 12px;
+    bottom: 12px;
+    right: 12px;
+
+    ${Button} {
+      height: 36px;
+      font-size: 14px;
+      line-height: normal;
+      width: auto;
+
+      span,
+      i {
+        line-height: normal;
+      }
     }
   }
 `
@@ -115,6 +140,11 @@ const ButtonGroup = styled.div`
       display: inline-block;
       overflow: hidden;
       transition: all ${(props) => props.theme.transition.base} 0.1s;
+    }
+
+    @media all and (max-width: 580px) {
+      padding-left: 12px;
+      padding-right: 12px;
     }
   }
 `

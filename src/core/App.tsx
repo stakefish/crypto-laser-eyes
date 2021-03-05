@@ -6,6 +6,7 @@ import { useSetState } from "../helpers/hooks"
 import { Layout } from "../layouts/"
 
 import Header from "../containers/Header"
+import Footer from "../containers/Footer"
 import Lasers from "../containers/Lasers"
 import Playground from "../containers/Playground"
 import Main from "../components/Main"
@@ -42,6 +43,7 @@ const App: React.FC = () => {
         <Header />
         <Playground laser={state.laser} portrait={state.portrait} onDrop={onDrop} />
         <Lasers onClick={onClick} />
+        <Footer />
       </Main>
     </Layout>
   )

@@ -30,6 +30,11 @@ const Menu = styled.div`
     opacity: 1;
     visibility: visible;
   }
+
+  @media all and (max-width: 767px) {
+    top: auto;
+    bottom: 100%;
+  }
 `
 
 const Control = styled.div`
@@ -76,6 +81,10 @@ const Inner = styled.ul`
     &:hover {
       background-color: ${rgba("#000", 0.08)};
     }
+  }
+
+  @media all and (max-width: 580px) {
+    border-radius: 8px;
   }
 `
 

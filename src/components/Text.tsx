@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { rem } from "polished";
+import styled from "styled-components"
+import { rem } from "polished"
 
 /**
  * Types
@@ -14,6 +14,11 @@ const Text = styled.p<TextProps>`
   text-align: center;
   line-height: 1.3;
   margin-bottom: ${rem(56)};
-`;
 
-export default Text;
+  @media all and (max-width: 580px) {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+`
+
+export default Text

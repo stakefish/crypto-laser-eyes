@@ -9,6 +9,7 @@ export interface ButtonProps {}
 const Button = styled.button<ButtonProps>`
   padding: ${rem(16)} ${rem(36)};
   border-radius: ${rem(16)};
+  position: relative;
   letter-spacing: 0;
   line-height: 1;
   border: 0;
@@ -35,6 +36,18 @@ const Button = styled.button<ButtonProps>`
     display: inline-block;
     vertical-align: middle;
     line-height: 1;
+  }
+
+  @media all and (max-width: 580px) {
+    border-radius: 12px;
+    padding: 7px 16px 11px;
+    width: 100%;
+    font-size: 14px;
+    line-height: normal;
+
+    i {
+      font-size: 32px;
+    }
   }
 `
 

@@ -19,11 +19,23 @@ interface Props {
 
 const StyledCol = styled.div`
   flex: 0 0 25%;
-  margin-bottom: 20px;
 
   @media all and (min-width: 768px) {
     flex: 1 0 auto;
-    margin-bottom: 0;
+  }
+`
+
+const StyledRow = styled.div`
+  flex-wrap: nowrap;
+  padding-bottom: 15px;
+`
+
+const Overflow = styled.div`
+  padding: 4px;
+  margin-bottom: -15px;
+
+  @media all and (max-width: 767px) {
+    overflow: auto;
   }
 `
 
@@ -32,13 +44,15 @@ const Lasers: React.FC<Props> = ({ onClick }: Props) => {
     <Section>
       <Grid>
         <Card>
-          <Row>
-            {Array.from(LASERS).map(([laser, meta]) => (
-              <Col as={StyledCol} key={meta.name}>
-                <Variant title={meta.name} image={meta.src} onClick={() => onClick(laser)} />
-              </Col>
-            ))}
-          </Row>
+          <Overflow>
+            <Row as={StyledRow}>
+              {Array.from(LASERS).map(([laser, meta]) => (
+                <Col as={StyledCol} key={meta.name}>
+                  <Variant title={meta.name} image={meta.src} onClick={() => onClick(laser)} />
+                </Col>
+              ))}
+            </Row>
+          </Overflow>
         </Card>
       </Grid>
     </Section>
