@@ -58,6 +58,12 @@ const Wrapper = styled.div<WrapperProps>`
     height: 100%;
   }
 
+  canvas {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+  }
+
   @media all and (max-width: 580px) {
     .konvajs-content {
       width: 280px !important;
@@ -65,7 +71,6 @@ const Wrapper = styled.div<WrapperProps>`
 
       canvas {
         width: 100% !important;
-        height: auto !important;
       }
     }
   }
@@ -150,6 +155,10 @@ const ButtonGroup = styled.div`
     @media all and (max-width: 580px) {
       padding-left: 12px;
       padding-right: 12px;
+
+      span {
+        display: none;
+      }
     }
   }
 `
@@ -181,9 +190,11 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
     }
   }
 
+  const bgPreview = portrait
+
   return (
     <>
-      <Wrapper preview={portrait || "images/blank.png"} cleanBackground={isNil(portrait)}>
+      <Wrapper preview={bgPreview || "images/blank.png"} cleanBackground={isNil(portrait)}>
         <Stage className="stage" {...STAGE_CONFIG} ref={stageRef}>
           <Layer>
             {portrait ? <Figure scaled src={portrait} /> : null}
