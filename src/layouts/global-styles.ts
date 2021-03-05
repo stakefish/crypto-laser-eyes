@@ -42,11 +42,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     @media all and (max-width: 580px) {
-      font-size: 12px
-    }
-
-    @media all and (max-width: 430) {
-      font-size: 10px
+      font-size: 11px
     }
   }
 
@@ -85,5 +81,6 @@ export const GlobalStyles = createGlobalStyle`
 
   * {
     box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
   }
 `;

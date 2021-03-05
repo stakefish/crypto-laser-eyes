@@ -20,6 +20,12 @@ const Title = styled.h1<TitleProps>`
   @media all and (max-width: 767px) {
     font-size: ${(props) => rem(props.theme.fontSize.h2)};
   }
+
+  @media all and (max-width: 580px) {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 4px;
+  }
 `
 
 export default Title

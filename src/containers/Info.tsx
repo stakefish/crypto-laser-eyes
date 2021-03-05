@@ -18,8 +18,19 @@ interface WrapperProps {}
 const Wrapper = styled.div<WrapperProps>`
   text-align: center;
 
-  @media all and (max-width: 991px) {
+  @media all and (max-width: 1024px) {
     margin-bottom: 30px;
+  }
+
+  @media all and (max-width: 580px) {
+    margin-bottom: 16px;
+
+    button i {
+      position: absolute;
+      left: 4px;
+      top: 2px;
+      margin: 0;
+    }
   }
 `
 
