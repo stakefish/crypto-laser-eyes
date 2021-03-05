@@ -35,7 +35,7 @@ export const models = async () => {
 }
 
 export const coordinate = (position: number): number => {
-  return position - LASER_SIZE / SCALE_FACTOR
+  return (position - LASER_SIZE) / SCALE_FACTOR
 }
 
 export const average = (points: Point[] | undefined): IPoint | undefined => {
