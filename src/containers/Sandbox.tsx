@@ -62,6 +62,11 @@ const Wrapper = styled.div<WrapperProps>`
     .konvajs-content {
       width: 280px !important;
       height: 280px !important;
+
+      canvas {
+        width: 100% !important;
+        height: auto !important;
+      }
     }
   }
 `
