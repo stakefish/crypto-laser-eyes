@@ -210,7 +210,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
         {portrait && (
           <Actions>
             <Button type="button" onClick={onClick}>
-              Add laser rays
+              Detect
             </Button>
             <ButtonGroup>
               <Button type="button">
