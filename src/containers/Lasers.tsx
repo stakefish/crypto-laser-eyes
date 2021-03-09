@@ -21,6 +21,7 @@ interface Props {
 
 const StyledCol = styled.div`
   flex: 0 0 25%;
+  padding: 0 1%;
 
   @media all and (min-width: 992px) {
     flex: 1 0 auto;
@@ -30,6 +31,7 @@ const StyledCol = styled.div`
 const StyledRow = styled.div`
   flex-wrap: nowrap;
   padding-bottom: 15px;
+  margin: 0 -1%;
 `
 
 const Overflow = styled.div`
