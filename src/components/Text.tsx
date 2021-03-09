@@ -7,8 +7,8 @@ import { rem } from "polished"
 export interface TextProps {}
 
 const Text = styled.p<TextProps>`
-  font-family: Helvetica;
   font-size: ${(props) => rem(props.theme.fontSize.lead)};
+  font-size: 1.5vw;
   color: ${(props) => props.theme.colors.gray};
   letter-spacing: 0;
   text-align: center;

@@ -5,8 +5,9 @@ import styled from "styled-components"
 import { Laser } from "../helpers/types"
 import { LASERS } from "../helpers/const"
 
-import Variant from "../components/Variant"
+import { FluidGrid } from "../layouts/global-styles"
 
+import Variant from "../components/Variant"
 import Card from "../components/Card"
 import Section from "../components/Section"
 
@@ -42,7 +43,7 @@ const Overflow = styled.div`
 const Lasers: React.FC<Props> = ({ onClick }: Props) => {
   return (
     <Section>
-      <Grid>
+      <Grid as={FluidGrid} fluid>
         <Card>
           <Overflow>
             <Row as={StyledRow}>

@@ -1,4 +1,4 @@
-import { createGlobalStyle } from "styled-components";
+import styled, { createGlobalStyle } from "styled-components";
 import { normalize, rem } from "polished";
 
 export const GlobalStyles = createGlobalStyle`
@@ -84,3 +84,10 @@ export const GlobalStyles = createGlobalStyle`
     -webkit-tap-highlight-color: transparent;
   }
 `;
+
+export const FluidGrid = styled.div`
+  @media all and (min-width: 768px) {
+    padding-left: 8%;
+    padding-right: 8%;
+  }
+`

@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { rem } from "polished"
 
 import Social from "./Social"
+import { FluidGrid } from "../layouts/global-styles"
 
 const Wrapper = styled.footer`
   padding: ${rem(12)} 0;
@@ -37,7 +38,7 @@ const Disclaimer = styled.div`
 const Footer: React.FC = () => {
   return (
     <Wrapper>
-      <Grid>
+      <Grid as={FluidGrid} fluid>
         {isMobile && <Social />}
         <Disclaimer>
           f2pool & stakefish take privacy very seriously. The “CRYPTOLASEREYES” app is provided for fun and convenience.
