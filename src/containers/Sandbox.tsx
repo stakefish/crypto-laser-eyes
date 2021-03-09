@@ -35,10 +35,10 @@ const Wrapper = styled.div<WrapperProps>`
   background-image: url(${(props) => props.preview});
   background-size: cover;
   background-position: center;
-  display: inline-block;
   overflow: hidden;
   width: 100%;
   height: 100%;
+  transform: translate3d(0, 0, 0);
 
   &:before {
     content: "";
@@ -78,7 +78,7 @@ const Actions = styled.div`
   bottom: ${rem(28)};
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   ${Button} {
     background-color: ${(props) => props.theme.colors.white};
