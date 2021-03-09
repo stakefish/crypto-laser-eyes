@@ -77,7 +77,7 @@ const Actions = styled.div`
   bottom: ${rem(28)};
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-end;
 
   ${Button} {
     background-color: ${(props) => props.theme.colors.white};
