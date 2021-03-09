@@ -173,15 +173,21 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
   const lasers = values(state)
   const src = LASERS?.get(laser)?.src
 
+  const detectEyes = async () => {
+    try {
+      setState(await detect())
+    } catch (error) {}
+  }
+
   useEffect(() => {
     models()
   }, [])
 
-  const onClick = async () => {
-    try {
-      setState(await detect())
-    } catch {}
-  }
+  useEffect(() => {
+    if (portrait) {
+      setTimeout(detectEyes, 100)
+    }
+  }, [portrait])
 
   const onExport = () => {
     if (stageRef?.current) {
@@ -190,11 +196,9 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
     }
   }
 
-  const bgPreview = portrait
-
   return (
     <>
-      <Wrapper preview={bgPreview || "images/blank.png"} cleanBackground={isNil(portrait)}>
+      <Wrapper preview={portrait || "images/blank.png"} cleanBackground={isNil(portrait)}>
         <Stage className="stage" {...STAGE_CONFIG} ref={stageRef}>
           <Layer>
             {portrait ? <Figure scaled src={portrait} /> : null}
@@ -218,11 +222,8 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
           </Layer>
         </Stage>
 
-        {portrait && (
+        {portrait ? (
           <Actions>
-            <Button type="button" onClick={onClick}>
-              Detect
-            </Button>
             <ButtonGroup>
               <Button type="button">
                 <SvgIcon iconKey="share" />
@@ -234,7 +235,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
               </Button>
             </ButtonGroup>
           </Actions>
-        )}
+        ) : null}
       </Wrapper>
     </>
   )
