@@ -20,7 +20,7 @@ interface Props {
 const StyledCol = styled.div`
   flex: 0 0 25%;
 
-  @media all and (min-width: 768px) {
+  @media all and (min-width: 992px) {
     flex: 1 0 auto;
   }
 `
@@ -34,7 +34,7 @@ const Overflow = styled.div`
   padding: 4px;
   margin-bottom: -15px;
 
-  @media all and (max-width: 767px) {
+  @media all and (max-width: 991px) {
     overflow: auto;
   }
 `

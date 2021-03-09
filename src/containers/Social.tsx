@@ -31,8 +31,9 @@ const Wrapper = styled.div`
     }
   }
 
-  @media all and (max-width: 767px) {
+  @media all and (max-width: 915px) {
     justify-content: center;
+    margin-bottom: 10px;
   }
 `
 
