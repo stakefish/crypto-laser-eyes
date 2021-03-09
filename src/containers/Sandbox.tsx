@@ -35,7 +35,6 @@ const Wrapper = styled.div<WrapperProps>`
   background-image: url(${(props) => props.preview});
   background-size: cover;
   background-position: center;
-  display: inline-block;
   overflow: hidden;
   width: 100%;
   height: 100%;
