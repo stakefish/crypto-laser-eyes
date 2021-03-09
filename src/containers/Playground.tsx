@@ -4,6 +4,8 @@ import styled from "styled-components"
 
 import { Laser } from "../helpers/types"
 
+import { FluidGrid } from "../layouts/global-styles"
+
 import Section from "../components/Section"
 import Card from "../components/Card"
 
@@ -38,7 +40,7 @@ const StyledSection = styled(Section)`
 const Playground: React.FC<Props> = ({ laser, portrait, onDrop }: Props) => {
   return (
     <StyledSection>
-      <Grid>
+      <Grid as={FluidGrid} fluid>
         <Card>
           <Row middle="sm">
             <Col xs={12} md={6}>

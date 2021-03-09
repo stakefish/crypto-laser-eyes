@@ -59,10 +59,21 @@ const Wrapper = styled.div<WrapperProps>`
   }
 
   .konvajs-content {
+    min-width: 540px;
+    min-height: 415px;
+
+    @media all and (min-width: 1025px) {
+      width: 100% !important;
+      height: 100% !important;
+    }
+
     @media all and (max-width: 580px) {
       width: 280px !important;
       height: 280px !important;
+      min-width: 0;
+      min-height: 0;
     }
+
     canvas {
       width: 100% !important;
       height: 100% !important;

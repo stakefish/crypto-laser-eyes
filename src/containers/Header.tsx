@@ -5,6 +5,7 @@ import styled from "styled-components"
 import { rem } from "polished"
 
 import Social from "./Social"
+import { FluidGrid } from "../layouts/global-styles"
 
 /**
  * Types
@@ -49,7 +50,7 @@ const Logo = styled.div`
 const Header: React.FC<Props> = () => {
   return (
     <Wrapper>
-      <Grid>
+      <Grid as={FluidGrid} fluid>
         <Row middle="xs" center="xs" between="sm">
           <Col>
             <Logo>
