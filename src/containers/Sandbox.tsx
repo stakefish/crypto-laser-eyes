@@ -222,8 +222,14 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
           <Actions>
             <ButtonGroup>
               <Button type="button">
-                <SvgIcon iconKey="share" />
-                <span>Share</span>
+                <a
+                  target="_blank"
+                  rel="noreferrer"
+                  href="https://twitter.com/intent/tweet?text=Join%20the%20revolution.%20Be%20part%20of%20the%20laser%20eye%20family%20and%20update%20your%20profile%20picture%20today!&url=https%3A%2F%2Fcryptolasereyes.com&hashtags=LaserRayUntil100K"
+                >
+                  <SvgIcon iconKey="share" />
+                  <span>Share</span>
+                </a>
               </Button>
               <Button type="button" onClick={onExport}>
                 <SvgIcon iconKey="download" />
