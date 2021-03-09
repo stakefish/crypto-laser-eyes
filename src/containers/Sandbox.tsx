@@ -173,7 +173,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
   const lasers = values(state)
   const src = LASERS?.get(laser)?.src
 
-  const detectEyes = async () => {
+  const faceLandmarks = async () => {
     try {
       setState(await detect())
     } catch (error) {}
@@ -185,7 +185,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
 
   useEffect(() => {
     if (portrait) {
-      setTimeout(detectEyes, 100)
+      setTimeout(faceLandmarks, 100)
     }
   }, [portrait])
 
