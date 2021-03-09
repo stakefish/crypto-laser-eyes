@@ -28,7 +28,7 @@ const Wrapper = styled.div<WrapperProps>`
     button i {
       position: absolute;
       left: 4px;
-      top: 2px;
+      top: 0;
       margin: 0;
     }
   }

@@ -7,7 +7,7 @@ import { rem } from "polished"
 export interface MainProps {}
 
 const Main = styled.main<MainProps>`
-  padding-bottom: ${rem(40)};
+  padding-bottom: ${rem(5)};
 
   @media all and (max-width: 580px) {
     position: relative;

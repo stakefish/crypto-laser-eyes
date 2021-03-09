@@ -13,6 +13,10 @@ const Button = styled.button<ButtonProps>`
   letter-spacing: 0;
   line-height: 1;
   border: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
   font-size: ${(props) => rem(props.theme.fontSize.lead)};
   font-weight: ${(props) => props.theme.fontWeight.medium};
   background-color: ${(props) => props.theme.colors.white};
@@ -40,7 +44,7 @@ const Button = styled.button<ButtonProps>`
 
   @media all and (max-width: 580px) {
     border-radius: 12px;
-    padding: 7px 16px 11px;
+    padding: 8px 16px;
     width: 100%;
     font-size: 14px;
     line-height: normal;

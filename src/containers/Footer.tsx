@@ -23,13 +23,15 @@ const Wrapper = styled.footer`
 
   @media all and (min-width: 581px) {
     position: relative;
+    padding: ${rem(30)} 0;
   }
 `
 
 const Disclaimer = styled.div`
   font-size: ${rem(14)};
   line-height: normal;
-  opacity: 0.6;
+  opacity: 0.5;
+  text-align: center;
 `
 
 const Footer: React.FC = () => {
