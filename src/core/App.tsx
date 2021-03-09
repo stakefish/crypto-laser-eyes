@@ -42,7 +42,7 @@ const App: React.FC = () => {
       <Main>
         <Header />
         <Playground laser={state.laser} portrait={state.portrait} onDrop={onDrop} />
-        <Lasers onClick={onClick} />
+        <Lasers activeLaser={state.laser} onClick={onClick} />
         <Footer />
       </Main>
     </Layout>

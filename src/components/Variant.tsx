@@ -6,7 +6,7 @@ import { rem } from "polished"
  */
 export interface VariantProps {
   image?: string
-  active?: string
+  active?: boolean
   onClick?: () => void
 }
 
@@ -35,7 +35,7 @@ const Laser = styled.div<VariantProps>`
   }
 
   &:hover {
-    box-shadow: inset 0 0 0 5px rgba(119, 123, 132, 0.24), 0 0 0 2px #777b84;
+    box-shadow: inset 0 0 0 7px rgba(119, 123, 132, 0.24), inset 0 0 0 3px rgba(119, 123, 132, 0.24), 0 0 0 2px #777b84;
 
     &:before {
       transform: scale(1.15) rotate(10deg);
@@ -45,9 +45,7 @@ const Laser = styled.div<VariantProps>`
   ${(props) =>
     props.active &&
     css`
-      &:before {
-        box-shadow: inset 0 0 0 5px rgba(252, 114, 87, 0.24), 0 0 0 2px #fc7459;
-      }
+      box-shadow: inset 0 0 0 7px rgba(252, 114, 87, 0.24), inset 0 0 0 3px rgba(252, 114, 87, 0.24), 0 0 0 2px #fc7459 !important;
     `}
 `
 
