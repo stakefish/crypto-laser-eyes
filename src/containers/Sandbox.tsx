@@ -112,7 +112,7 @@ const Actions = styled.div`
 `
 
 const ButtonGroup = styled.div`
-  ${Button} {
+  ${Button}, a {
     padding: ${rem(10)} ${rem(12)};
 
     &:first-child {
@@ -221,16 +221,16 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
         {portrait ? (
           <Actions>
             <ButtonGroup>
-              <Button type="button">
-                <a
-                  target="_blank"
-                  rel="noreferrer"
-                  href="https://twitter.com/intent/tweet?text=Join%20the%20revolution.%20Be%20part%20of%20the%20laser%20eye%20family%20and%20update%20your%20profile%20picture%20today!&url=https%3A%2F%2Fcryptolasereyes.com&hashtags=LaserRayUntil100K"
-                >
+              <a
+                target="_blank"
+                rel="noreferrer"
+                href="https://twitter.com/intent/tweet?text=Join%20the%20revolution.%20Be%20part%20of%20the%20laser%20eye%20family%20and%20update%20your%20profile%20picture%20today!&url=https%3A%2F%2Fcryptolasereyes.com&hashtags=LaserRayUntil100K"
+              >
+                <Button type="button">
                   <SvgIcon iconKey="share" />
                   <span>Share</span>
-                </a>
-              </Button>
+                </Button>
+              </a>
               <Button type="button" onClick={onExport}>
                 <SvgIcon iconKey="download" />
                 <span>Download</span>
