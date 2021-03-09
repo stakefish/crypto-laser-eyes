@@ -87,7 +87,7 @@ export const GlobalStyles = createGlobalStyle`
 
 export const FluidGrid = styled.div`
   @media all and (min-width: 768px) {
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 8% !important;
+    padding-right: 8% !important;
   }
 `
