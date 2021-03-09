@@ -48,7 +48,7 @@ const Wrapper = styled.div<WrapperProps>`
     top: 0;
     width: 100%;
     height: 100%;
-    backdrop-filter: ${(props) => (props.cleanBackground ? "none" : "blur(10px)")};
+    backdrop-filter: blur(10px);
   }
 
   .stage {
@@ -171,8 +171,8 @@ const ButtonGroup = styled.div`
 
 const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
   const [state, setState] = useSetState<{ [key: string]: IPoint | undefined }>({
-    left: undefined,
-    right: undefined,
+    left: { x: 236, y: 31.81867850138373 },
+    right: { x: 270, y: 30.816437664763399 },
   })
 
   const stageRef = useRef(null)
@@ -205,10 +205,10 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
 
   return (
     <>
-      <Wrapper preview={portrait || "images/blank.png"} cleanBackground={isNil(portrait)}>
+      <Wrapper preview={portrait || "images/default.jpg"} cleanBackground={isNil(portrait)}>
         <Stage className="stage" {...STAGE_CONFIG} ref={stageRef}>
           <Layer>
-            {portrait ? <Figure scaled src={portrait} /> : null}
+            <Figure scaled src={portrait || "images/default.jpg"} />
 
             {lasers.map((laser) => {
               if (isNil(laser)) {

@@ -25,5 +25,5 @@ export const STAGE_CONFIG = {
   height: 415,
 }
 
-export const LASER_SIZE = 150
+export const LASER_SIZE = 100
 export const SCALE_FACTOR = 2
