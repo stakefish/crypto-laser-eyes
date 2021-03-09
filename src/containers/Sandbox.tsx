@@ -58,20 +58,15 @@ const Wrapper = styled.div<WrapperProps>`
     height: 100%;
   }
 
-  canvas {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover;
-  }
-
-  @media all and (max-width: 580px) {
-    .konvajs-content {
+  .konvajs-content {
+    @media all and (max-width: 580px) {
       width: 280px !important;
       height: 280px !important;
-
-      canvas {
-        width: 100% !important;
-      }
+    }
+    canvas {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover;
     }
   }
 `
