@@ -16,6 +16,7 @@ import Section from "../components/Section"
  */
 interface Props {
   onClick: (laser: Laser) => void
+  activeLaser?: Laser
 }
 
 const StyledCol = styled.div`
@@ -40,16 +41,21 @@ const Overflow = styled.div`
   }
 `
 
-const Lasers: React.FC<Props> = ({ onClick }: Props) => {
+const Lasers: React.FC<Props> = ({ onClick, activeLaser }: Props) => {
   return (
     <Section>
       <Grid as={FluidGrid} fluid>
         <Card>
           <Overflow>
             <Row as={StyledRow}>
-              {Array.from(LASERS).map(([laser, meta]) => (
+              {Array.from(LASERS).map(([laser, meta], i) => (
                 <Col as={StyledCol} key={meta.name}>
-                  <Variant title={meta.name} image={meta.src} onClick={() => onClick(laser)} />
+                  <Variant
+                    title={meta.name}
+                    image={meta.src}
+                    active={activeLaser === i}
+                    onClick={() => onClick(laser)}
+                  />
                 </Col>
               ))}
             </Row>
