@@ -180,7 +180,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
 
   useEffect(() => {
     if (portrait) {
-      setTimeout(faceLandmarks, 100)
+      setTimeout(faceLandmarks, 500)
     }
     // eslint-disable-next-line
   }, [portrait])
