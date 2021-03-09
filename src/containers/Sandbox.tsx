@@ -187,6 +187,7 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
     if (portrait) {
       setTimeout(faceLandmarks, 100)
     }
+    // eslint-disable-next-line
   }, [portrait])
 
   const onExport = () => {
