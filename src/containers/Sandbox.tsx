@@ -1,9 +1,10 @@
-import React, { useRef, useEffect } from "react"
+import React, { useRef, useEffect, useState } from "react"
 import { values, isNil } from "ramda"
 import { Stage, Layer } from "react-konva"
 import { rem } from "polished"
 import { IPoint } from "face-api.js"
 import styled from "styled-components"
+import Helmet from "react-helmet"
 
 import { models, detect, download } from "../helpers/utils"
 import { useSetState } from "../helpers/hooks"
@@ -164,6 +165,8 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
     right: undefined,
   })
 
+  const [card, setCard] = useState<string | undefined>()
+
   const stageRef = useRef(null)
   const lasers = values(state)
   const src = LASERS?.get(laser)?.src
@@ -188,12 +191,25 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
   const onExport = () => {
     if (stageRef?.current) {
       // @ts-expect-error
+      setCard(stageRef.current.toDataURL())
+      // @ts-expect-error
       download(stageRef.current.toDataURL(), "crypto-laser-eyes.png")
     }
   }
 
   return (
     <>
+      <Helmet>
+        <meta name="twitter:card" content="photo" />
+        <meta name="twitter:site" content="@stakefish" />
+        <meta name="twitter:title" content="CRYPTOLASEREYES" />
+        <meta
+          name="twitter:description"
+          content="Blue for Ethereum. Red for Bitcoin. Upload a picture of yourself to upgrade your eyes to laser eyes!"
+        />
+        <meta name="twitter:image" content={`data:image/png;base64,${card}`} />
+        <meta name="twitter:url" content="http://cryptolasereyes.com" />
+      </Helmet>
       <Wrapper preview={portrait || "images/blank.png"} cleanBackground={isNil(portrait)}>
         <Stage className="stage" {...STAGE_CONFIG} ref={stageRef}>
           <Layer>
