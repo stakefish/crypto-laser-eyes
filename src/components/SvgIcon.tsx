@@ -23,6 +23,8 @@ const renderIconKey = (iconKey: string) => {
       return "\\e902"
     case "share":
       return "\\e903"
+    case "github":
+      return "\\f09b"
     default:
       return ""
   }
