@@ -5,6 +5,7 @@
   "dependencies": {
     "@types/react-helmet": "^6.1.0",
     "face-api.js": "^0.22.2",
+    "image-promise": "^7.0.1",
     "konva": "^7.2.4",
     "polished": "^4.1.1",
     "ramda": "^0.27.1",

@@ -195,10 +195,15 @@ const Sandbox: React.FC<Props> = ({ laser = Laser.Gold, portrait }: Props) => {
     // eslint-disable-next-line
   }, [portrait])
 
-  const onExport = () => {
+  const onExport = async () => {
     if (stageRef?.current) {
       // @ts-expect-error
-      download(stageRef.current.toDataURL(), "crypto-laser-eyes.png")
+      stageRef.current.toImage({
+        pixelRatio: 3,
+        callback(img: any) {
+          download(img.src, "crypto-laser-eyes.png")
+        },
+      })
     }
   }
 
