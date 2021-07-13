@@ -3,7 +3,9 @@
 The “CRYPTO LAZER EYES MASK” app is provided for fun and convenience. We never store photos, and do not transmit any data besides an anonymous identifier containing no personal information. We have also made the source code available in the event you would like to review it.
 
 ---------------------
-Feel free to fork this repo to create your own mask app! You may also use <a href="https://github.com/stakefish/stanley-ipkiss">this template</a> to create a new mask app with your design!
+Feel free to fork this repo to create your own mask app! 
+
+You may also use <a href="https://github.com/stakefish/stanley-ipkiss">this template</a> to create a new mask app with your design!
 
 ---------------------
 
