@@ -40,7 +40,7 @@ jobs:
           pinataSecret: ${{ secrets.PINATA_SECRET_API_KEY }}
 
       - name: Publish IPFS hash
-        uses: thollander/actions-comment-pull-request@master
+        uses: thollander/actions-comment-pull-request@main
         with:
           message: "[IPFS](https://ipfs.io/ipfs/${{ steps.ipfs.outputs.hash }}) 🌎"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
