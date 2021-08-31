@@ -35,6 +35,9 @@ jobs:
         id: ipfs
         with:
           path: build
+          service: pinata
+          pinataKey: ${{ secrets.PINATA_KEY }}
+          pinataSecret: ${{ secrets.PINATA_SECRET_API_KEY }}
 
       - name: Publish IPFS hash
         uses: thollander/actions-comment-pull-request@master
