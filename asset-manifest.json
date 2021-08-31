@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.js": "https://cryptolasereyes.com/static/js/main.397c419b.chunk.js",
+    "main.js.map": "https://cryptolasereyes.com/static/js/main.397c419b.chunk.js.map",
+    "runtime-main.js": "https://cryptolasereyes.com/static/js/runtime-main.443db88c.js",
+    "runtime-main.js.map": "https://cryptolasereyes.com/static/js/runtime-main.443db88c.js.map",
+    "static/js/2.29d24564.chunk.js": "https://cryptolasereyes.com/static/js/2.29d24564.chunk.js",
+    "static/js/2.29d24564.chunk.js.map": "https://cryptolasereyes.com/static/js/2.29d24564.chunk.js.map",
+    "index.html": "https://cryptolasereyes.com/index.html",
+    "static/js/2.29d24564.chunk.js.LICENSE.txt": "https://cryptolasereyes.com/static/js/2.29d24564.chunk.js.LICENSE.txt",
+    "static/media/light-hit-01.c9f6aa7b.png": "https://cryptolasereyes.com/static/media/light-hit-01.c9f6aa7b.png",
+    "static/media/light-hit-03.0495cdbd.png": "https://cryptolasereyes.com/static/media/light-hit-03.0495cdbd.png",
+    "static/media/light-hit-04.ed3e1c8b.png": "https://cryptolasereyes.com/static/media/light-hit-04.ed3e1c8b.png",
+    "static/media/light-hit-05.5d491c09.png": "https://cryptolasereyes.com/static/media/light-hit-05.5d491c09.png",
+    "static/media/light-hit-06.a3f15371.png": "https://cryptolasereyes.com/static/media/light-hit-06.a3f15371.png",
+    "static/media/light-hit-07.f762e2fa.png": "https://cryptolasereyes.com/static/media/light-hit-07.f762e2fa.png",
+    "static/media/light-hit-08.9b81db8b.png": "https://cryptolasereyes.com/static/media/light-hit-08.9b81db8b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.443db88c.js",
+    "static/js/2.29d24564.chunk.js",
+    "static/js/main.397c419b.chunk.js"
+  ]
+}
