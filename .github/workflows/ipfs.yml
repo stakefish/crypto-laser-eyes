@@ -44,3 +44,6 @@ jobs:
         with:
           message: "[IPFS](https://ipfs.io/ipfs/${{ steps.ipfs.outputs.hash }}) 🌎"
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+permissions: 
+  id-token: write 
+  contents: read

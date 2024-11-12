@@ -5,27 +5,22 @@ on:
       - "master"
 jobs:
   build-and-deploy-github-pages:
+    permissions:
+      contents: write  
+      id-token: write
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2.3.4
-        with:
-          persist-credentials: false
+        uses: actions/checkout@v4 
 
-      - name: Cache
-        uses: actions/cache@v2
-        env:
-          cache-name: cache-node-modules
+      - name: Setup Node.js
+        uses: actions/setup-node@v4 
         with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+          node-version: '16.13.2'
+          cache: 'npm' 
 
       - name: Install
-        run: npm install
+        run: npm ci
 
       - name: Build GitHub Pages
         env:
@@ -35,15 +30,15 @@ jobs:
 
       - name: Deploy GitHub Pages
         if: success()
-        uses: crazy-max/ghaction-github-pages@v2
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          target_branch: gh-pages
-          build_dir: build
-          fqdn: cryptolasereyes.com
+          branch: gh-pages
+          folder: build
+          clean: true
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Contributors
-        uses: akhilmhdh/contributors-readme-action@v2.1.1
+        uses: akhilmhdh/contributors-readme-action@v2.3.6
         env:
-          GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
