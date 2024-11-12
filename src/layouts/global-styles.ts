@@ -1,5 +1,5 @@
-import styled, { createGlobalStyle } from "styled-components";
-import { normalize, rem } from "polished";
+import styled, { createGlobalStyle } from "styled-components"
+import { normalize, rem } from "polished"
 
 export const GlobalStyles = createGlobalStyle`
   ${normalize()};
@@ -33,6 +33,11 @@ export const GlobalStyles = createGlobalStyle`
 
   }
 
+  ::selection {
+    background: ${(props) => props.theme.colors.primary};
+    color: ${(props) => props.theme.colors.secondary};
+  }
+
   h1, h2, h3, h4, h5 {
     margin-top: 0;
   }
@@ -51,7 +56,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
   }
-`;
+`
 
 export const FluidGrid = styled.div`
   @media all and (min-width: 768px) {

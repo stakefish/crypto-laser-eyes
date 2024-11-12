@@ -18,7 +18,7 @@ export interface DropdownProps {
 const Menu = styled.div`
   position: absolute;
   top: 100%;
-  right: 0;
+  right: -10px;
   opacity: 0;
   visibility: hidden;
   z-index: 10;
@@ -33,7 +33,7 @@ const Menu = styled.div`
 
   @media all and (max-width: 767px) {
     top: auto;
-    bottom: 100%;
+    bottom: 150%;
   }
 `
 

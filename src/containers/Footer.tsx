@@ -33,6 +33,12 @@ const Disclaimer = styled.div`
   line-height: normal;
   opacity: 0.5;
   text-align: center;
+
+  @media all and (min-width: 581px) {
+    text-align: start;
+    max-width: 1024px;
+    margin-inline: auto;
+  }
 `
 
 const Footer: React.FC = () => {

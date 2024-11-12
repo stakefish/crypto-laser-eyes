@@ -4,6 +4,7 @@ import { rem } from "polished"
 
 import SvgIcon from "../components/SvgIcon"
 import Dropdown from "../components/Dropdown"
+import Twitter from "../icons/Twitter"
 
 /**
  * Types
@@ -21,6 +22,16 @@ const Wrapper = styled.div`
 
   span {
     margin: 0 ${rem(5)};
+  }
+
+  .custom-icon {
+    width: ${rem(20)};
+    display: flex;
+    margin-left: ${rem(10)};
+
+    svg path {
+      fill: currentColor;
+    }
   }
 
   a {
@@ -55,10 +66,14 @@ const Social: React.FC<Props> = () => {
         </a>
       </span>
       <Dropdown
-        title={<SvgIcon iconKey="twitter" />}
+        title={
+          <i className="custom-icon">
+            <Twitter />
+          </i>
+        }
         data={[
-          { name: "f2pool", url: "https://twitter.com/f2pool_official" },
-          { name: "stakefish", url: "https://twitter.com/stakefish" },
+          { name: "f2pool", url: "https://x.com/f2pool_official" },
+          { name: "stakefish", url: "https://x.com/stakefish" },
         ]}
       />
       <SocialLink href="https://t.me/stakefish" target="_blank" rel="noreferrer">
